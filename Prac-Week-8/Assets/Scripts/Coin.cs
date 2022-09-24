@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Coin : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter(Collider other)
+    {   
+        
+        if(other.CompareTag("Player"))
+        {
+            Scorekeeper.Instance.AddPointsForCoin();
+            Destroy(gameObject);
+        }
     }
 }
