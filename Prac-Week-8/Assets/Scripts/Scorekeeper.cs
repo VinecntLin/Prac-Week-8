@@ -26,12 +26,13 @@ public class Scorekeeper : MonoBehaviour
 
     public void Start()
     {
-        instance = this;
-    }
-
+        instance = this;}
+    
     public void AddPointsForCoin()
     {
         score += pointsPerCoin;
+
+        Debug.Log(Score);
     }
 
 }
