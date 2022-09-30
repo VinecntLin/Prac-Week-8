@@ -8,8 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text scoreText;
     
-   
-   
+    [SerializeField]
+    private string scoreFormat = "Score: {0}";
 
     private Scorekeeper scorekeeper;
 
@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        string score = "Score: " + scorekeeper.Score;
-        scoreText.text = score;
+        int score = scorekeeper.Score;
+        scoreText.text = string.Format(scoreFormat, score);
     }
 }
