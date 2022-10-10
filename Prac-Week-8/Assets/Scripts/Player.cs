@@ -16,12 +16,11 @@ public class Player : MonoBehaviour
     //Update is called once per frame
     void Update () 
     {
-       
+        rigi.velocity = new Vector3(Input.GetAxis ("Horizontal") * moveSpeed, rigi.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
         
-        if (Input.GetMouseButtonDown(0))
-        {   
-            rigi.velocity = new Vector3(Input.GetAxis ("Horizontal") * moveSpeed, rigi.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
-            // rigi.velocity = new Vector3(rigi.velocity.x, jumpForce, rigi.velocity.z);
+        if(Input. GetButtonDown("Jump"))
+        {
+            rigi.velocity = new Vector3(rigi.velocity.x, jumpForce, rigi.velocity.z);
         }
     }
 
